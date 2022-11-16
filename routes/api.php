@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/books', [BookStoreController::class, 'index']);
-Route::get('/books/{id}', [BookStoreController::class, 'show']);
+Route::get('books', [BookStoreController::class, 'index']);
+Route::get('find/book/{id}', [BookStoreController::class, 'show']);
 
 Route::group([
     'prefix' => 'auth'
@@ -31,9 +31,9 @@ Route::group([
         Route::get('logout', [AuthController::class, 'logout']);
         Route::get('user', [AuthController::class, 'user']);
 
-        Route::post('books', [BookStoreController::class, 'store']);
-        Route::put('books/{id}', [BookStoreController::class, 'update']);
-        Route::delete('books/{id}', [BookStoreController::class, 'destroy']);
+        Route::post('create/book', [BookStoreController::class, 'store']);
+        Route::put('update/book/{id}', [BookStoreController::class, 'update']);
+        Route::delete('delete/book/{id}', [BookStoreController::class, 'destroy']);
     });
 });
 
