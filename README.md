@@ -8,6 +8,15 @@
 2. `php artisan passport:install`
 3. `php artisan passport:install --force`
 4. `composer install`
+5. `config .env` example:
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=api_bookstore
+DB_USERNAME=root
+DB_PASSWORD=root
+```
 
 Once the project creation procedure will be completed, run the `php artisan migrate` command to install the required tables.
 
