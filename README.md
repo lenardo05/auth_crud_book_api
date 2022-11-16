@@ -1,4 +1,16 @@
 ## Laravel API CRUD Book Store and Auth for Laravel 7
+## Server Requirements
+* PHP >= 7.2.5
+* BCMath PHP Extension
+* Ctype PHP Extension
+* Fileinfo PHP extension
+* JSON PHP Extension
+* Mbstring PHP Extension
+* OpenSSL PHP Extension
+* PDO PHP Extension
+* Tokenizer PHP Extension
+* XML PHP Extension
+
 ## Installation
 
 1. run `git clone https://github.com/lenardo05/auth_crud_book_api.git`;
