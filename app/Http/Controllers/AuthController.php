@@ -82,9 +82,9 @@ class AuthController extends Controller
         ]);
 
     }
-    
+
     /**
-     * Logout user Revoke the token
+     * Logout user remove token
      *
      * @return [string] message
      */
@@ -98,5 +98,20 @@ class AuthController extends Controller
             'code'      => 201
         ], 201);  
 
+    }
+
+    /**
+     * Get authenticated User
+     *
+     * @return [json] user object
+     */
+    public function user(Request $request)
+    {
+        return response()->json([
+            'success'   => true,
+            'message'   => 'Successfully',
+            'data'      => $request->user(),
+            'code'      => 201
+        ], 201);  
     }
 }
