@@ -44,14 +44,21 @@ class BookStoreController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Return find Book
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  [integer] id
+     * @return [string] message
      */
     public function show($id)
     {
-        //
+        $book = Book::find($id);
+
+        return response()->json([
+            'success'   => true,
+            'message'   => 'Book',
+            'data'      => $book,
+            'code'      => 200
+        ], 200);
     }
 
     /**
