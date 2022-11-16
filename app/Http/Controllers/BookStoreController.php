@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Book;
+use App\BookStore as Book;
 use Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
