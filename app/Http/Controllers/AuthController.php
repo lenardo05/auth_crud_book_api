@@ -114,4 +114,19 @@ class AuthController extends Controller
             'code'      => 201
         ], 201);  
     }
+
+    /**
+     * Send message Unauthorized
+     *
+     * @return [string] message
+     */
+    public function unauthorized()
+    {
+        return response()->json([
+            'success'   => false,
+            'message'   => 'Unauthorized',
+            'data'      => [],
+            'code'      => 401
+        ], 401);
+    }
 }
