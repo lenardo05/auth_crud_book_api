@@ -2,13 +2,8 @@
 ## Installation
 
 1. run `git clone https://github.com/lenardo05/auth_crud_book_api.git`;
-
-**Optional:** php artisan config:clear
-
-2. `php artisan passport:install`
-3. `php artisan passport:install --force`
-4. `composer install`
-5. `config .env` example:
+2. rename `.env.example` to `.env` 
+3. config `.env` example:
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -17,6 +12,13 @@ DB_DATABASE=api_bookstore
 DB_USERNAME=root
 DB_PASSWORD=root
 ```
+4. run `composer require laravel/passport:^9.0`
+5. run `composer require lcobucci/jwt:"^3.0"`
+6. run `php artisan key:generate`
+7. run `php artisan config:cache`
+8. run `php artisan migrate`
+9. run `php artisan passport:install --force`
+10. run `composer install`
 
 Once the project creation procedure will be completed, run the `php artisan migrate` command to install the required tables.
 
