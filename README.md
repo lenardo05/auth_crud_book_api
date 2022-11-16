@@ -35,12 +35,12 @@ The route is secured with authentication
 |        |          |                                         | auth:api   |
 | {host} | POST     | api/auth/signup                         | api        |
 | {host} | POST     | api/auth/login                          | api        |
+| {host} | GET|HEAD | api/auth/logout                         | api        |
 | {host} | GET|HEAD | api/auth/user                           | api        |
 |        |          |                                         |            |
 | {host} | POST     | api/auth/create/book                    | api        |
 | {host} | PUT      | api/auth/update/book/{id}               | api        |
 | {host} | DELETE   | api/auth/delete/book/{id}               | api        |
-| {host} | GET|HEAD | api/auth/logout                         | api        |
 |        |          |                                         |            |
 | {host} | GET|HEAD | api/books                               | api        |
 | {host} | GET|HEAD | api/find/book/{id}                      | api        |
