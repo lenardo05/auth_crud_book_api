@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/books', [BookStoreController::class, 'index']);
+Route::get('/books/{id}', [BookStoreController::class, 'show']);
+
 Route::group([
     'prefix' => 'auth'
 ], function () {
