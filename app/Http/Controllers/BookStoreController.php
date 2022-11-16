@@ -62,25 +62,43 @@ class BookStoreController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update Book
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  [integer] id
+     * @param  [string] name
+     * @param  [only_numbers] isbn
+     * @param  [decimal] value
+     * @return [string] message
      */
-    public function update(Request $request, $id)
+    public function update(BookStorePost $request, $id)
     {
-        //
+        $book = Book::findOrFail($id);
+        $book->update($request->all());
+
+        return response()->json([
+            'success'   => true,
+            'message'   => 'Book Updated',
+            'data'      => $book,
+            'code'      => 201
+        ], 201);
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete Book
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  [integer] id
+     * @return [string] message
      */
     public function destroy($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        Book::destroy($id);
+
+        return response()->json([
+            'success'   => true,
+            'message'   => 'Book Deleted',
+            'data'      => $book,
+            'code'      => 201
+        ], 201);
     }
 }
