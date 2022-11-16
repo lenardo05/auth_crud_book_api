@@ -19,8 +19,7 @@ DB_PASSWORD=root
 8. run `php artisan migrate`
 9. run `php artisan passport:install --force`
 10. run `composer install`
-
-Once the project creation procedure will be completed, run the `php artisan migrate` command to install the required tables.
+11. run `php artisan serve`
 
 ## Usage
 
@@ -30,22 +29,22 @@ Below are the routes.
 The route is secured with authentication
 
 ```
-+---------+----------+-----------------------------------------+------------+
-| Domain  | Method   | URI                                     | Middleware |
-+---------+----------+-----------------------------------------+------------+
-|         |          |                                         | auth:api   |
-|localhost| POST     | api/auth/signup                         | api        |
-|localhost| POST     | api/auth/login                          | api        |
-|localhost| GET|HEAD | api/auth/user                           | api        |
-|         |          |                                         |            |
-|localhost| POST     | api/auth/create/book                    | api        |
-|localhost| PUT      | api/auth/update/book/{id}               | api        |
-|localhost| DELETE   | api/auth/delete/book/{id}               | api        |
-|localhost| GET|HEAD | api/auth/logout                         | api        |
-|         |          |                                         |            |
-|localhost| GET|HEAD | api/books                               | api        |
-|localhost| GET|HEAD | api/find/book/{id}                      | api        |
-|         |          |                                         |            |
-|localhost| GET|HEAD | api/unauthorized                        | api        |
-+---------+----------+-----------------------------------------+------------+
++--------+----------+-----------------------------------------+------------+
+| Domain | Method   | URI                                     | Middleware |
++--------+----------+-----------------------------------------+------------+
+|        |          |                                         | auth:api   |
+| {host} | POST     | api/auth/signup                         | api        |
+| {host} | POST     | api/auth/login                          | api        |
+| {host} | GET|HEAD | api/auth/user                           | api        |
+|        |          |                                         |            |
+| {host} | POST     | api/auth/create/book                    | api        |
+| {host} | PUT      | api/auth/update/book/{id}               | api        |
+| {host} | DELETE   | api/auth/delete/book/{id}               | api        |
+| {host} | GET|HEAD | api/auth/logout                         | api        |
+|        |          |                                         |            |
+| {host} | GET|HEAD | api/books                               | api        |
+| {host} | GET|HEAD | api/find/book/{id}                      | api        |
+|        |          |                                         |            |
+| {host} | GET|HEAD | api/unauthorized                        | api        |
++--------+----------+-----------------------------------------+------------+
 ```
