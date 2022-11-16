@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
+use Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\BookStoreRequest;
 
 class BookStoreController extends Controller
 {
@@ -31,7 +35,7 @@ class BookStoreController extends Controller
      * @param  [decimal] value
      * @return [string] message
      */
-    public function store(BookStorePost $request)
+    public function store(BookStoreRequest $request)
     {
         $book = Book::create($request->all());
 
@@ -70,7 +74,7 @@ class BookStoreController extends Controller
      * @param  [decimal] value
      * @return [string] message
      */
-    public function update(BookStorePost $request, $id)
+    public function update(BookStoreRequest $request, $id)
     {
         $book = Book::findOrFail($id);
         $book->update($request->all());
