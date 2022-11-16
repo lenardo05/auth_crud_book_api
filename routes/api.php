@@ -27,7 +27,11 @@ Route::group([
         'middleware' => 'auth:api'
     ], function() {
         Route::get('logout', [AuthController::class, 'logout']);
-        Route::get('user', [AuthController::class, 'user'])->middleware('auth');
+        Route::get('user', [AuthController::class, 'user']);
+
+        Route::post('books', [BookStoreController::class, 'store']);
+        Route::put('books/{id}', [BookStoreController::class, 'update']);
+        Route::delete('books/{id}', [BookStoreController::class, 'destroy']);
     });
 });
 
